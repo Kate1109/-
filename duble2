@@ -1,0 +1,20 @@
+n1 = int(input())
+n2 = list(input())
+
+no_duplicates = []
+for i in n2:
+  if i not in no_duplicates:
+    no_duplicates.append(i)
+
+duplicates = []
+
+for item in n2:
+    if n2.count(item) > 1 and item not in duplicates:
+        duplicates.append(item)
+
+for i in range(len(duplicates)):
+    duplicates[i] = '_'
+
+no_duplicates.extend(duplicates)
+
+print(' '.join(no_duplicates))
