@@ -1,0 +1,17 @@
+length1 = int(input())
+array = list(input())
+
+new_list = [elem for elem in array if elem.strip()]
+
+no_duplicates = []
+for i in new_list:
+  if i not in no_duplicates:
+    no_duplicates.append(i)
+length_no_duplicates = len(no_duplicates)
+x = length1 - length_no_duplicates
+length = x
+new1_list = ['_'] * length
+
+no_duplicates.extend(new1_list)
+
+print(' '.join(no_duplicates))
