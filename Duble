@@ -1,0 +1,22 @@
+n1 = int(input())
+n2 = list(input())
+
+no_duplicates = []
+for i in n2:
+  if i not in no_duplicates:
+    no_duplicates.append(i)
+
+duplicates = []
+
+for item in n2:
+    if n2.count(item) > 1 and item not in duplicates:
+        duplicates.append(item)
+
+for i in range(len(duplicates)):
+    duplicates[i] = ' _'
+
+for i in duplicates:
+    no_duplicates.append(i)
+mew_list = ' '.join(map(str, no_duplicates))
+
+print(mew_list)
