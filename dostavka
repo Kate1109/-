@@ -12,14 +12,16 @@ def find_quantity_platforms(weight_robots_list, limit_platforms):
         result = weight_robots_list[left_pointer] + weight_robots_list[right_pointer]
         if result <= limit_platforms:            
             platforma += 1
-            return platforma
         if result > limit_platforms:
             right_pointer -= 1
         else:
             left_pointer += 1
-    for i in weight_robots_list:
-        if i == limit_platforms:
+        if left_pointer == limit_platforms:
             platforma += 1
-            return platforma  
-   
+            
+        if right_pointer == limit_platforms:
+            platforma += 1
+            return platforma
+
+
 print(find_quantity_platforms(weight_robots_list, limit_platforms))
