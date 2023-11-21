@@ -15,7 +15,6 @@ def find_quantity_platforms(weight_robots_list, limit_platforms):
             right_pointer -= 1
         else:
             left_pointer += 1
-    for i in weight_robots_list:
         if i == limit_platforms:
             return quantity_platforms
 
