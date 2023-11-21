@@ -4,20 +4,22 @@ limit_platforms = int(input())
 weight_robots_list = list(map(int, weight_robots.split()))
 
 def find_quantity_platforms(weight_robots_list, limit_platforms):
+    platforma = 0
     left_pointer = 0
     right_pointer = len(weight_robots_list) - 1
-    while left_pointer <= right_pointer:
+    
+    while left_pointer < right_pointer:
         result = weight_robots_list[left_pointer] + weight_robots_list[right_pointer]
-        if result == limit_platforms:
-            return left_pointer, right_pointer 
+        if result <= limit_platforms:            
+            return platforma 
         if result > limit_platforms:
             right_pointer -= 1
         else:
             left_pointer += 1
         if left_pointer >= right_pointer:
-            return left_pointer
+            return platforma
         if left_pointer <= right_pointer:
-            return right_pointer
+            return platforma
 
 
-    print(find_quantity_platforms(weight_robots_list, limit_platforms))
+print(find_quantity_platforms(weight_robots_list, limit_platforms))
