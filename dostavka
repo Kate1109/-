@@ -8,20 +8,21 @@ def find_quantity_platforms(weight_robots_list, limit_platforms):
     left_pointer = 0
     right_pointer = len(weight_robots_list) - 1
     weight_robots_list.sort()
-    while left_pointer <= right_pointer:
+    while left_pointer <= right_pointer: 
         result = weight_robots_list[left_pointer] + weight_robots_list[right_pointer]
         if result <= limit_platforms:
             platforma += 1
-        if result > limit_platforms:
-            weight_robots_list[left_pointer] > weight_robots_list[right_pointer]
-            platforma += 1
-            weight_robots_list[right_pointer] > weight_robots_list[left_pointer]
-            platforma += 1
-        else:
             left_pointer += 1
             right_pointer -= 1
+        else: 
+            weight_robots_list[right_pointer] >= weight_robots_list[left_pointer]
+            platforma += 1
+            right_pointer -= 1
+            weight_robots_list[left_pointer] > weight_robots_list[right_pointer]
+            platforma += 1
+            left_pointer += 1
             
-        return platforma
+    return platforma
 
 
 print(find_quantity_platforms(weight_robots_list, limit_platforms))
