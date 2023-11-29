@@ -1,0 +1,13 @@
+len_number = 10
+numbers_list = (2, 7, 0, 3, 6, 4, 1, 5, 8, 9)
+
+max_value = max(numbers_list)
+size = max_value/len_number
+buckets = [[] for i in range(len_number)]
+for i in range(len_number):
+    index = int(numbers_list[i]/size)
+    if index != len_number:
+        buckets[index].append(numbers_list[i])
+    else:
+        buckets[len_number - 1].append(numbers_list[i])
+    print(buckets)
