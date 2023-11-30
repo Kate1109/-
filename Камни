@@ -1,0 +1,18 @@
+len_zakaz = int(input())
+zakaz = str(input())
+len_fakt = int(input())
+fakt = str(input())
+
+zakaz_list = list(map(int, zakaz.split()))
+fakt_list = list(map(int, fakt.split()))
+zakaz_list.sort(reverse=True)
+fakt_list.sort(reverse=True)
+completed_list = []
+i = j = 0
+while j < len_fakt and i < len_zakaz:
+    if fakt_list[j] > zakaz_list[i]:
+        completed_list.append(fakt_list[j])
+        j += 1
+    else:
+        i += 1
+print (len(completed_list))
